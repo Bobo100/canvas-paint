@@ -24,7 +24,9 @@
 ```bash
 npm install
 npm start          # http://localhost:3000
-npm run deploy     # build 後推到 gh-pages 分支(GitHub Pages)
+npm run build
 ```
+
+部署:push 到 `main` 後由 GitHub Action([.github/workflows/main.yml](.github/workflows/main.yml))build 並推到 `gh-pages` 分支;PR 只跑 build 當檢查。
 
 技術:Create React App、React 18、TypeScript、SCSS。
