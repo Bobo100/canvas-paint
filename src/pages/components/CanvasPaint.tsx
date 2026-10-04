@@ -1,5 +1,5 @@
 // 嚴格清除模式
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
 interface Props2 {
     history: {
@@ -85,7 +85,7 @@ export const CanvasTest2 = () => {
             context.lineCap = "round";
         }
         // 把之前的路徑畫出來
-        propsCurrentRef.current.history.forEach((path, index) => {
+        propsCurrentRef.current.history.forEach((path) => {
 
             context.strokeStyle = path.color;
             context.lineWidth = path.rangeValue;
@@ -122,7 +122,7 @@ export const CanvasTest2 = () => {
             propsUndoRef.current.history = [];
 
             context.clearRect(0, 0, canvas.width, canvas.height);
-            propsCurrentRef.current.history.forEach((path, index) => {
+            propsCurrentRef.current.history.forEach((path) => {
                 context.strokeStyle = path.color;
                 context.lineWidth = path.rangeValue;
                 context.stroke(path.path);
@@ -144,7 +144,7 @@ export const CanvasTest2 = () => {
             if (!context) return;
 
             context.clearRect(0, 0, canvas.width, canvas.height);
-            propsCurrentRef.current.history.forEach((path, index) => {
+            propsCurrentRef.current.history.forEach((path) => {
                 context.strokeStyle = path.color;
                 context.lineWidth = path.rangeValue;
                 context.stroke(path.path);
@@ -181,7 +181,7 @@ export const CanvasTest2 = () => {
         if (!context) return;
 
         context.clearRect(0, 0, canvas.width, canvas.height);
-        propsCurrentRef.current.history.forEach((path, index) => {
+        propsCurrentRef.current.history.forEach((path) => {
             context.strokeStyle = path.color;
             context.lineWidth = path.rangeValue;
             context.stroke(path.path);
